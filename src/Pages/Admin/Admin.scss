@@ -1,0 +1,58 @@
+.admin{
+    min-height: 100vh;
+    background-color: rgba($color: #1B1A17, $alpha: .3);
+   
+    &__header{
+        position: relative;
+        padding: 20px 0;
+        background-color: rgba($color: #FFF, $alpha: .7);
+        //  box-shadow: 0 0 3px 1px #FFF;
+        &--logo{
+            font-family: 'Parisienne', cursive;
+            font-size: 32px;
+            font-weight: 900;
+        }
+        &--wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &--search{
+            background-color: #293462;
+            border-color: #293462;
+        }
+        &--form{
+            display: flex;
+            align-items: center;
+            width: 700px ;
+            max-width: 100%;
+            margin-bottom: 0 !important;
+        }
+        &--logout{
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+    }
+    &__main{
+        padding: 10px;
+        &--select{
+            background-color: transparent;
+            border: none;
+        }
+    }
+    &__himself{
+        color: #FF1700;
+        margin-left: 20px;
+    }
+}
+.form-check{
+    width: 50px;
+    margin: 0 !important;
+}
+.active{
+    color: #357C3C !important;
+}
+.block{
+    color: #990000 !important;
+}

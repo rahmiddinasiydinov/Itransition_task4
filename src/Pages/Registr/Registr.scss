@@ -1,0 +1,21 @@
+.register{
+    &__star{
+        color:#F32424;
+    }
+    &__input{
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    &__label{
+        width: 300px;
+        max-width: 100%;
+    }
+    &__link{
+        color: #FFFFFF;
+        transition: .3s;
+        &:hover{
+            opacity: .5;
+            color: #FFFFFF;
+        }
+    }
+}
