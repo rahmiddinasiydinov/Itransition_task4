@@ -45,6 +45,13 @@
         color: #FF1700;
         margin-left: 20px;
     }
+    &__trash{
+        color: #FFF;
+        &:hover{
+            color: #FFF;
+            opacity: .8;
+        }
+    }
 }
 .form-check{
     width: 50px;

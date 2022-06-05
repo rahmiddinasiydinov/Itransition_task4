@@ -150,7 +150,7 @@ export const Admin: React.FC = () => {
               <button
                 type="button"
                 onClick={handleBlock}
-                className="btn btn-warning"
+                className="btn btn-danger"
               >
                 Block
               </button>
@@ -159,14 +159,14 @@ export const Admin: React.FC = () => {
                 onClick={handleUnBlock}
                 className="btn btn-success"
               >
-                UnBlock
+                <i className="fa-solid fa-lock-open"></i>
               </button>
               <button
                 type="button"
                 onClick={handleDelete}
-                className="btn btn-danger"
+                className="btn btn-warning admin__trash"
               >
-                Delete
+                <i className="fa-solid fa-trash"></i>
               </button>
             </div>
           </div>
@@ -174,7 +174,7 @@ export const Admin: React.FC = () => {
             type="button"
             className="btn btn-outline-primary admin__header--logout"
             onClick={() => {
-              navigate('/')
+              navigate("/");
             }}
           >
             Log out
@@ -222,7 +222,14 @@ export const Admin: React.FC = () => {
                     </td>
                     <td>{i + 1}</td>
                     <td>{e._id}</td>
-                    <td>{e.fullName}{e.username===ownUsername?<span className='admin__himself'> this is you</span>:''}</td>
+                    <td>
+                      {e.fullName}
+                      {e.username === ownUsername ? (
+                        <span className="admin__himself"> this is you</span>
+                      ) : (
+                        ""
+                      )}
+                    </td>
                     <td>{e.username}</td>
                     <td>{e.password}</td>
                     <td>{e.email}</td>
