@@ -10,12 +10,15 @@ export const Register: React.FunctionComponent = () => {
   async function handleSubmit(e: any) {
     e.preventDefault();
     const { username, password, email, fullname } = e.target.elements;
-    const response = await axios.post("http://localhost:7000/new-user", {
-      username: username.value,
-      password: password.value,
-      email: email.value,
-      fullName: fullname.value?fullname.value:'',
-    });
+    const response = await axios.post(
+      "https://regauth1.herokuapp.com/new-user",
+      {
+        username: username.value,
+        password: password.value,
+        email: email.value,
+        fullName: fullname.value ? fullname.value : "",
+      }
+    );
     if (response.data.status === 200) {
       setStatus("Successfully registered");
       statusText.current?.classList.add("login__status--success");
