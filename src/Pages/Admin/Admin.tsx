@@ -15,14 +15,11 @@ export const Admin: React.FC = () => {
     const navigate = useNavigate()
   useEffect(() => {
         axios
-          .get(
-            "http://localhost:7000/user",
-            {
-              headers: {
-                token: `${token}`,
-              },
-            }
-          )
+          .get("https://regauth1.herokuapp.com/user", {
+            headers: {
+              token: `${token}`,
+            },
+          })
           .then((res) => {
             setUsers(res.data.users);
             setAlldata(res.data.users);
@@ -51,11 +48,10 @@ export const Admin: React.FC = () => {
     }
   }
   const handleDelete = () => {
-    axios.delete(`http://localhost:7000/user?arrId=${selected}`, {
+    axios.delete(`https://regauth1.herokuapp.com/user?arrId=${selected}`, {
       headers: {
       "token":`${token}`
     }}).then((res) => {
-      console.log(res);
       if (res.data.status === 200) {
           setToggle(!toggle);
       } else if (res.data.status === 401) {
@@ -69,7 +65,7 @@ export const Admin: React.FC = () => {
   }
   const handleBlock = () => {
      axios
-       .put(`http://localhost:7000/user`,
+       .put(`https://regauth1.herokuapp.com/user`,
          {
            arrId: selected,
          status:false},
@@ -94,7 +90,7 @@ export const Admin: React.FC = () => {
     const handleUnBlock = () => {
       axios
         .put(
-          `http://localhost:7000/user`,
+          `https://regauth1.herokuapp.com/user`,
           {
             arrId: selected,
             status: true,
@@ -208,7 +204,7 @@ export const Admin: React.FC = () => {
                 <th>Password</th>
                 <th>Email</th>
                 <th>Last login time</th>
-                <th>Registrayion time</th>
+                <th>Registration time</th>
                 <th>Status</th>
               </tr>
             </thead>

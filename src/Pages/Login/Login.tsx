@@ -27,7 +27,9 @@ export const Login: React.FunctionComponent = () => {
      setTimeout(() => {
        statusText.current?.classList.remove(statusValue.className);
       }, statusValue.time);
-   if (response.data.status === 200) navigate(`/admin/${response.data.token}`);
+   if (response.data.status === 200) setTimeout(() => {
+      navigate(`/admin/${response.data.token}`);
+   }, 2000);
 
    
   }
