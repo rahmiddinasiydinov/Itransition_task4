@@ -75,7 +75,6 @@ export const Admin: React.FC = () => {
          }}
        )
        .then((res) => {
-         console.log(res);
          if (res.data.status === 200) {
              setToggle(!toggle);
          } else if (res.data.status === 401) {
@@ -102,7 +101,6 @@ export const Admin: React.FC = () => {
           }
         )
         .then((res) => {
-          console.log(res);
           if (res.data.status === 200) {
               setToggle(!toggle);
           } else if (res.data.status === 401) {
@@ -116,10 +114,8 @@ export const Admin: React.FC = () => {
     };
   const handleSearch = (e:any) => {
     const value = e.target.value.trim();
-    console.log(value);
     const reg = new RegExp(value, 'gi');
     const data: Iuser[] | undefined = allData?.filter((e: Iuser) => e.username.match(reg));
-    console.log(data);
     setUsers(data ? [...data] : users);
    }
     

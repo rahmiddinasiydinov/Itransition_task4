@@ -12,12 +12,10 @@ export const Login: React.FunctionComponent = () => {
  async function handleSubmit(e:any) {
     e.preventDefault();
     const { username, password } = e.target.elements;
-    console.log(username.value, password.value);
     const response = await axios.post("https://regauth1.herokuapp.com/login", {
      username: username.value, 
      password:password.value
    });
-   console.log(response);
    const statusValue:Istatus = setStatusFunc(response.data.status)
 
 
